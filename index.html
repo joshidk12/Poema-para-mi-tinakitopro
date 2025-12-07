@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Amor</title>
+    <link rel="stylesheet" href="../style/miestilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-heart"></i> Para el Amor de mi Vida <i class="fas fa-heart"></i></h1>
+            <p class="subtitle">Una página creada con todo mi cariño</p>
+        </header>
+
+        <main>
+            <div class="poem-container">
+                <div class="poem-header">
+                    <h2><i class="fas fa-feather-alt"></i> Poema para ti, charlize</h2>
+                    <p class="date">Hoy, <span id="fecha"></span></p>
+                </div>
+                
+                <div class="poem">
+                    <div class="stanza">
+                        <p>Desde en la mañana, en el amanecer,</p>
+                        <p>ahi estas tu, hasta el anochecer,</p>
+                        <p>en mi mente, me hipnotizo con tu mirada</p>
+                        <p>una mirada café, el cafe, que mas bebo en las mañanas.</p>
+                    </div>
+                    
+                    <div class="stanza">
+                        <p>Eres el verso que mi alma cantaba,</p>
+                        <p>la melodía que no sabe acabar,</p>
+                        <p>la primavera que nunca se acaba,</p>
+                        <p>y la razón de mi respirar.</p>
+                    </div>
+                    
+                    <div class="stanza">
+                        <p>Si el mundo entero se volviera arena,</p>
+                        <p>y el tiempo mismo decidiera parar,</p>
+                        <p>contigo a mi lado, mi amor, sin pena,</p>
+                        <p>podría el universo observar.</p>
+                    </div>
+                    
+                    <div class="stanza final">
+                        <p>Porque en tu amor encuentro mi destino,</p>
+                        <p>en tu sonrisa, la luz del camino,</p>
+                        <p>eres mi sueño, mi anhelo, mi consuelo</p>
+                        <p>la razón por la que vivo, deseando tus dulces besos</p>
+                    </div>
+
+                    <div>
+
+                    <div class="stanza fina">
+                        <p>y hoy, mi amor, en este dia tan especial para ti,</p>
+                        <p>te digo, mi cielo, que eres mi razon de vivir,</p>
+                        <p>y que te deseo un feliz cumpleaños,</p>
+                        <p>gracias, por ser mi felicidad todo este año ♡</p>
+        
+                    
+                    </div>
+                </div>
+                
+                <div class="dedication">
+                    <p><i class="fas fa-quote-left"></i> Para ti, que iluminas mis días y das sentido a mis sueños. <i class="fas fa-quote-right"></i></p>
+                    <p class="signature">Con todo mi amor,<br><span class="name">[Josué, tu noviecito]</span></p>
+                </div>
+            </div>
+            
+            <div class="heart-animation">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+        </main>
+<div class="corazon-enlace">
+    <a href="../diario/diario.html" class="corazon-link" title="Haz clic para más sorpresas">
+        <div class="corazon-container">
+            <i class="fas fa-heart corazon-grande"></i>
+            <i class="fas fa-heart corazon-medio"></i>
+            <i class="fas fa-heart corazon-pequeno"></i>
+        </div>
+        <p class="corazon-texto">Toca mi corazón para continuar</p>
+    </a>
+</div>
+
+        <footer>
+            <p>Esta página fue creada especialmente para ti <i class="fas fa-heartbeat"></i></p>
+            <p class="secret-message">P.D.: Recarga la página para un pequeño efecto especial</p>
+        </footer>
+    </div>
+
+    <div class="floating-hearts"></div>
+
+    <script>
+        // Mostrar fecha actual
+        const fecha = new Date();
+        const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('fecha').textContent = fecha.toLocaleDateString('es-ES', opciones);
+        
+        // Crear corazones flotantes
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
+            heart.classList.add('floating-heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.opacity = Math.random() * 0.5 + 0.3;
+            
+            document.querySelector('.floating-hearts').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        
+        // Crear corazones cada cierto tiempo
+        setInterval(createHeart, 300);
+        
+        // Efecto al cargar la página
+        window.addEventListener('load', () => {
+            document.querySelector('.container').style.opacity = '1';
+            document.querySelector('.container').style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+</html>
